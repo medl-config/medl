@@ -1,0 +1,3 @@
+env.HOST=example.org
+secret.KEY=k1
+secret.ID=id-1

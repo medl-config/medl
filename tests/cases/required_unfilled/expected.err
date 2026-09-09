@@ -1,0 +1,3 @@
+error: 2 required key(s) were never filled: app.sku, app.name
+main.medl:2:3: `app.sku` declared required here: every variant must set a SKU
+main.medl:3:3: `app.name` declared required here

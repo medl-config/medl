@@ -1,0 +1,43 @@
+extends("base.medl")
+
+app {
+  when ctx.variant {
+    "store" => { extends("variants/store.medl") }
+    "expo" => { extends("variants/expo.medl") }
+  }
+  when ctx.platform {
+    "mobile" => { extends("platforms/mobile.medl") }
+    "xr" => { extends("platforms/xr.medl") }
+  }
+
+  platform_supported = when ctx.platform {
+    "mobile" => true
+    "xr" => true
+    else => error("unsupported platform: ${ctx.platform}")
+  }
+
+  variant_name = when ctx.variant {
+    "store" => "${app.name} Store"
+    "expo" => "${app.name} Expo"
+  }
+
+  display_name = when ctx.platform {
+    "mobile" => app.variant_name
+    "xr" => "${app.variant_name} for XR"
+  }
+
+  build_id = "${app.sku}-${ctx.platform}-${app.version |> replace(".", "_")}"
+
+  session {
+    label = "${app.session.provider |> upper}"
+  }
+
+  identifiers {
+    module_class = "${app.variant_name |> pascal_case}Session"
+    log_tag = "${app.variant_name |> snake_case}"
+  }
+
+  debug_summary = "features: ${app.features |> join(", ")} (${app.features |> len} total)"
+
+  analytics_key = default(secret.ANALYTICS_KEY, secret.ANALYTICS_FALLBACK_KEY)
+}

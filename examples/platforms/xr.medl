@@ -1,0 +1,5 @@
+app {
+  build { min_os = "2.0" }
+  platform_features += ["spatial_personas", "shared_space"]
+  session { spatial_audio = true }
+}

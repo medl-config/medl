@@ -1,0 +1,7 @@
+s {
+  x = 1
+  inner { y = "deep" }
+}
+t = "${s}"
+u = "${t.x}"
+v = "${t.inner.y}"

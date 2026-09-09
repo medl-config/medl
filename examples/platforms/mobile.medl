@@ -1,0 +1,4 @@
+app {
+  build { min_os = "17.0" }
+  platform_features += ["push_notifications", "health_sync"]
+}

@@ -1,0 +1,2 @@
+warning: `|` fallback is dead code: the left side is not a ctx, env, or secret lookup
+main.medl:2:8

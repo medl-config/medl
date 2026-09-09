@@ -1,0 +1,13 @@
+[package]
+name = "medl"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+indexmap = "2"
+serde_json = { version = "1", features = ["preserve_order"] }
+clap = { version = "4", features = ["derive"] }
+
+[[bin]]
+name = "medl"
+path = "src/main.rs"

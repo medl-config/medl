@@ -1,0 +1,1 @@
+error: dependency cycle: a -> b -> a

@@ -1,0 +1,15 @@
+app {
+  features += ["crash_reporting", "enterprise_sso", "device_management"]
+  networking { timeout_seconds = 30 }
+  sku = "PLS-STORE"
+  enterprise {
+    enabled = true
+    mdm_provider = "meridian"
+    license_seats = 500
+  }
+  session {
+    provider = "airlink"
+    max_participants = 8
+  }
+  compliance_profile = "enterprise"
+}

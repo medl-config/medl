@@ -1,0 +1,9 @@
+app {
+  name = "Pulse"
+  bundle_id = "com.example.pulse"
+  version = "1.4.0"
+  features += ["telemetry"]
+  build { optimization = "release" }
+  networking { retry_count = 3 }
+  enterprise { enabled = false }
+}

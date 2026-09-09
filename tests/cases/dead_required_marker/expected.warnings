@@ -1,0 +1,2 @@
+warning: `app.sku` is declared required here but the same file always assigns it; the marker is dead
+main.medl:2:3

@@ -1,0 +1,10 @@
+app {
+  when ctx.platform {
+    "mobile" => { min_os = "17.0" }
+    "xr" => { min_os = "2.0" }
+  }
+  label = when ctx.platform {
+    "mobile" => "phone"
+    else => "other"
+  }
+}

@@ -1,0 +1,6 @@
+app {
+  region = "${env.REGION | "eu" |> upper}"
+  host = "${env.HOST}"
+  key = default(env.MISSING, secret.KEY)
+  id = "${secret.ID}"
+}

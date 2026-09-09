@@ -1,0 +1,12 @@
+app {
+  features += ["session_recording"]
+  networking { timeout_seconds = 15 }
+  sku = "PLS-EXPO"
+  session {
+    provider = "relay"
+    app_id = secret.RELAY_APP_ID
+    region = "eu"
+    max_participants = 40
+  }
+  compliance_profile = "consumer"
+}
