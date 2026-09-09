@@ -2,6 +2,9 @@
 name = "medl"
 version = "0.1.0"
 edition = "2021"
+description = "Resolve .medl configuration files: merge, check and resolve to JSON"
+homepage = "https://medl.rocks"
+license = "MIT"
 
 [dependencies]
 indexmap = "2"
